@@ -18,13 +18,10 @@ do
     phonopy -f $files # {001..002}/vasprun.xml
     
     cat >band.conf<<EOF
-    ATOM_NAME = Mg B 
-    DIM = 1 1 1 
-    BAND = AUTO
-    EIGENVECTORS = .TRUE.
+DIM = 1 1 1 
+EIGENVECTORS = .TRUE.
 EOF
     
-    phonopy -p band.conf
-
+    phonopy band.conf --pa '1 0 0 0 1 0 0 0 1' --band '0 0 0 0.5 0.5 0.5'
     cd ..
 done
