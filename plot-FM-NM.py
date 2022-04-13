@@ -27,8 +27,8 @@ with open('mag.dat','r') as f:
     for line in f:
         ll=line.split()
         mag_str=ll[1].split(",")
-        mag_a=[float(k) for k in mag_str]
-        mag.append(np.mean(mag_a))
+        mag_a=float(mag_str[0])
+        mag.append(mag_a)
         name.append(ll[0])
 plt.xticks(range(len(name)), name, fontsize=12)
 plt.plot(mag,'-o')
