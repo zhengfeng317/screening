@@ -13,4 +13,8 @@
 5. Once finished, get results by results-FM-NM.py, then plot by plot-FM-NM.py.
 6. Analyse FM-NM.png for either EP or SF calculations.
 7. go to AFM; provide system for '1-sub-afm.sh'; change "MAGMOM" in INCAR.* files with AFM configurations
-8. go to EP; provide system for '2-sub-ep.sh'; check.sh and resub.sh can help process (may need to modify) 
+- submit AFM via 1-sub-afm.sh 
+
+8. go to EP; provide system for '2-sub-ep.sh'; 
+- submit EP via 2-sub-ep.sh 
+- check and resubmit unfinished jobs with check.sh/resub.sh (may need to modify)
