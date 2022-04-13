@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p RM-shared
+#SBATCH --ntasks-per-node=16
+#SBATCH --job-name=job
+#SBATCH -t 8:00:00
+#SBATCH -o Si256_hse.out
+#SBATCH -e Si256_hse.err
+
+ulimit -s unlimited
+module load intel/20.4 intelmpi/20.4-intel20.4
+export OMP_NUM_THREADS=1
+echo "SLURM_NTASKS: " $SLURM_NTASKS
+for k in 7 3 
+do
+    cp INCAR.$k INCAR
+    cp POSCAR POSCAR.$k
+    mpirun -np $SLURM_NTASKS /jet/home/ys3339/software/vasp620/vasp6.2.1/vasp.6.2.1/bin/vasp_std > vasp.$k
+    cp CONTCAR CONTCAR.$k
+    cp OUTCAR OUTCAR.$k
+    mv CONTCAR POSCAR
+done
