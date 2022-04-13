@@ -1,0 +1,31 @@
+# first relax every thing 
+SYSTEM = FM 
+NWRITE =    2        # default is 2 
+ISTART =    0        # job   : 0-new  1-cont  2-same basic set
+LCHARG =    .FALSE.  # write down charge densities or not  
+LWAVE  =    .FALSE.  # write down wavefunctions or not! to restart copy CONTCAR to POSCAR
+#ISYM   =    0       # default is 1
+
+# Electronic Relaxation
+ENCUT  =    520      # kinetic energy cutoff, default is taken from POTCAR file
+ISMEAR =    1
+SIGMA  =    0.1
+ISPIN  =    1       # (1 = off, 2 =on spin polarization)
+#MAGMOM =    4*4.0
+EDIFF  =    1E-05    # stopping-criterion for ELM, default is 1E-04
+EDIFFG =   -0.01
+NELMIN =    4
+MAXMIX = 100
+# LREAL  =    A      # for large system
+
+# Ionic Relaxation
+IBRION =    1        # ionic relax: 0=MD, 1=quasi-Newton, 2=CG,5=phonon 
+ISIF   =    3        # (2:force=y stress=y ions=y shape=n volume=n), default is 2
+NSW    =   100       # max number of geometry steps, default 0 
+
+# DOS Related values
+LORBIT =   11        # writting our magnetization
+
+# Algorithm:
+#ALGO    =   fast
+NPAR    =   4
