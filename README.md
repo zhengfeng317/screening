@@ -6,4 +6,4 @@
 - submit NM
 - check via check-NM.py
 
-4. go to FM; change "ISPIN  =  2" & "MAGMOM" in INCAR.* files
+4. go to FM; change "MAGMOM" in INCAR.* files (set metal moment=1; others =0)
