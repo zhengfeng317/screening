@@ -1,5 +1,5 @@
 # first relax every thing 
-SYSTEM = FM 
+SYSTEM = NM 
 NWRITE =    2        # default is 2 
 ISTART =    0        # job   : 0-new  1-cont  2-same basic set
 LCHARG =    .FALSE.  # write down charge densities or not  
