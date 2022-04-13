@@ -1,0 +1,59 @@
+#!/bin/bash
+#SBATCH --job-name="vm"
+#SBATCH -o qe.%j.out
+#SBATCH -e qe.%j.err
+### Change partition if needed
+#SBATCH --partition=shared
+### Change the following to your allocation ID
+#SBATCH -A col146
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=48
+#SBATCH --mem-per-cpu=1800M
+#SBATCH --export=ALL
+#SBATCH -t 48:00:00
+
+module purge
+module load slurm
+module load cpu/0.15.4  gcc/9.2.0  openmpi/3.1.6
+module load fftw/3.3.8 openblas/0.3.10-openmp netlib-scalapack/2.1.0-openblas
+
+export OMP_NUM_THREADS=1
+VASP=/home/ys3339/software/vasp620/vasp.6.2.0/bin/vasp_std
+
+# scr
+k="unscr"
+
+mkdir $k
+cp phonopy_disp.yaml $k
+cp INCAR.scf  INCAR.$k $k
+cp KPOINTS  POSCAR-* SPOSCAR POTCAR  $k/
+cd $k 
+
+# nscf
+mkdir scf
+cp INCAR.scf scf/INCAR
+cp SPOSCAR scf/POSCAR
+cp KPOINTS POTCAR scf
+cd scf
+mpirun $VASP > vasp.scf
+cd ..
+
+# unscr
+for nj in POSCAR-*
+do
+    a=${nj#"POSCAR-"}
+    mkdir $a
+    cp INCAR.$k $a/INCAR
+    cp $nj $a/POSCAR
+    cp KPOINTS POTCAR $a
+    cd $a
+    ln -s ../scf/WAVECAR WAVECAR
+    ln -s ../scf/CHGCAR CHGCAR
+    mpirun $VASP > vasp.nscf
+    cd ..
+done
+
+# clean
+#rm */WAVECAR  */CHGCAR
+
+date

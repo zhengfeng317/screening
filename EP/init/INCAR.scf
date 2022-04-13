@@ -1,0 +1,31 @@
+SYSTEM        = La2C3 
+    ISTART     = 0
+    LWAVE  = .TRUE.
+    LCHARG = .TRUE.
+
+#NPAR = 2
+#KPAR = 4
+PREC = HIGH
+
+# Electronic Relaxation:
+    NELM       = 1000
+    LREAL      = .FALSE.
+
+# Ionic Relaxation:
+    ISYM       = 0
+    IBRION     = -1
+    NBLOCK     = 1
+    KBLOCK     = 0
+    EDIFF      = 1E-07
+    EDIFFG     = -0.001
+
+# DOS related values:
+    SIGMA      = 0.002
+    ISMEAR     = -5
+    #EMIN=6
+    #EMAX=12
+    #NEDOS=800
+
+# Miscellaneous:
+
+#LORBIT=11
