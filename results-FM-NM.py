@@ -74,10 +74,12 @@ def get_EM(infile, n_mag):
     
     return Ep[-1], press[-1]*0.1, atom_mag
 
-
-elem=["Co","Fe","W","La","Y","Cu"]
-conf=["FM","AFM","NM"]
-natom_mag=4
+elem=['La', 'Fe', 'Mn', 'Ni', 'Co', 'W', 'Cu', 'Li',
+    'Al', 'Mg', 'K', 'Cr', 'V', 'Ca', 'Ba', 'Sr',
+    'Hf', 'Pr', 'Nd', 'Sm', 'Gd', 'Tb', 'Dy', 'Er',
+    'Tm', 'Yb', 'Y', 'Sc', 'Ho', 'Lu', 'Ce' ]
+conf=["FM","NM"]
+natom_mag=2
 
 file_e=open("energy.dat","w+")
 file_p=open("press.dat","w+")
