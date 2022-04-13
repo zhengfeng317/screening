@@ -16,6 +16,7 @@ cp $doc/Re/POTCAR Re.pot
 cp $doc/Os/POTCAR Os.pot
 
 cp $doc/B/POTCAR B.pot
+cp $doc/C/POTCAR C.pot
 
 cp $doc/Sc_sv/POTCAR Sc.pot
 cp $doc/Y_sv/POTCAR Y.pot
