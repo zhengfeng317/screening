@@ -4,6 +4,6 @@
 2. go to str/; change RE elements and natom
 3. go to NM; change init-rlx/job.pbs ; change 'POT' path in the  0-sub-rlx.sh
 - submit NM
-- check by check-NM.py
+- check via check-NM.py
 
 4. go to FM; change "ISPIN  =  2" & "MAGMOM" in INCAR.* files
