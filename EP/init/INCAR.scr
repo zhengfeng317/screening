@@ -1,4 +1,4 @@
-SYSTEM        = La2C3 
+SYSTEM        = scr 
     ISTART     = 0
     LWAVE  = .FALSE.
     LCHARG = .FALSE.
