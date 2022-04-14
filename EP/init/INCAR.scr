@@ -27,5 +27,5 @@ PREC = HIGH
     #NEDOS=800
 
 # Miscellaneous:
-
+IALGO = 48
 #LORBIT=11
