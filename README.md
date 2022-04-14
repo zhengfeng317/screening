@@ -22,5 +22,5 @@
 - use process-phonon.sh to process the phonon results; process-omega.sh to compute omega and plot
 
 9. go to CVX to compute convex hull for structures of interest; provide systems for "0-get-str.sh"
-- download files via 0-get-str.sh
+- download files via 0-get-str.sh. You need to provide MAPI_KEY in both .py files
 - submit relax calculations via  1-sub-rlx.sh
