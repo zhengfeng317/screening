@@ -18,3 +18,4 @@
 8. go to EP; provide system for '2-sub-ep.sh'; 
 - submit EP via 2-sub-ep.sh 
 - check and resubmit unfinished jobs with check.sh/resub.sh (may need to modify)
+- use process-phonon.sh to process the phonon results; process-omega.sh to compute omega
