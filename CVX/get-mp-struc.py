@@ -8,7 +8,7 @@ from pymatgen.ext.matproj import MPRester
 #from matminer.featurizers.structure import SiteStatsFingerprint
 from pymatgen.core import Lattice, Structure, Molecule
 
-MAPI_KEY = 'oW693Gka54dOv8rc'
+MAPI_KEY = 'xxx'
 mpr = MPRester(MAPI_KEY)
 
 with open("./mp_stable_ene.dat", "r") as fin:

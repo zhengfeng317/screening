@@ -21,7 +21,7 @@ from pymatgen.analysis.phase_diagram import *
 import sys
 
 if __name__ == "__main__":
-    MAPI_KEY = 'oW693Gka54dOv8rc'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
+    MAPI_KEY = 'xxx'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
     #system = ["Ce", "B", "C"]  # system we want to get PD for
     system = [sys.argv[1], sys.argv[2], sys.argv[3]]
 
