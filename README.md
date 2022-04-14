@@ -19,8 +19,8 @@
 8. go to EP; provide system for '2-sub-ep.sh'; 
 - submit EP via 2-sub-ep.sh 
 - check and resubmit unfinished jobs with check.sh/resub.sh (may need to modify)
-- use process-phonon.sh to process the phonon results; process-omega.sh to compute omega
+- use process-phonon.sh to process the phonon results; process-omega.sh to compute omega and plot
 
-9. go to CVX to compute convex hull; provide systems for "0-get-str.sh"
+9. go to CVX to compute convex hull for structures of interest; provide systems for "0-get-str.sh"
 - download files via 0-get-str.sh
 - submit relax calculations via  1-sub-rlx.sh
