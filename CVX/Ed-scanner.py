@@ -112,6 +112,8 @@ def ternary_convex_Ed(pts):
     return Ed
 
 # main
+MP_list="./mp_ref_combined_0418.dat"
+
 fin=open("mystr.dat",'r')
 print("%10s%16s"%("System", " Ed(eV/atom)"))
 for line in fin:
@@ -133,14 +135,14 @@ for line in fin:
     pts.append([chem[ele[0]], chem[ele[1]], chem[ele[2]], E])
     names=["new"]
     # find ref
-    fr=open("../"+syst+"_stable.dat","r")
+    fr=open(syst+"_stable.dat","r")
     for lr in fr:
         sid=lr.split()[1].split("-")[1]
         names.append(lr.split()[1])
-        fr_my=open("ref.dat","r")
+        fr_my=open(MP_list,"r")
         ref_info=""
         for lrm in fr_my:
-            sys=lrm.split()[0].split("/")[1].split(".")[0]
+            sys=lrm.split()[0].split(".")[0] #split("/")[1].split(".")[0]
             if(sys==sid):
                 ref_info=lrm
         fr_my.close()
