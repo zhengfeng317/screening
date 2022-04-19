@@ -22,6 +22,7 @@
 - use process-phonon.sh to process the phonon results; process-omega.sh to compute omega and plot
 
 9. go to CVX to compute convex hull for structures of interest; provide systems for "0-get-str.sh"
-- download files via 0-get-str.sh. You need to provide MAPI_KEY in both .py files
-- submit relax calculations via  1-sub-rlx.sh
-- go to summary/ to compute Ed and plot phase diagram
+- download MP referece list via 0-get-str.sh. You need to provide MAPI_KEY in pd_example.py 
+- generate my structure list according to FM or NM OUTCAR via 1-get-mystr.sh
+- compute Ed via Ed-scanner.py
+- plot via z-plot.sh
